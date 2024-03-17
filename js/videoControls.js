@@ -42,12 +42,14 @@ function changeVideo(num){
         y.style.display = "none";
         h.style.display = "block";
         a.style.display = "none";
+        b.style.display = "block";
         c.style.display = "none";
         x.style.display = "block";
         z.style.display = "block";
         x.style.animation = "fadeLeft 1s ease-in";
         h.style.animation = "fadeLeft 1s ease-in";
         z.style.animation = "fadeUp 1s ease-in";
+        b.style.animation = "fadeUp 0.75s ease-in"
         d.innerHTML = document.getElementById("firstCardTokyo").innerHTML;
         e.innerHTML = returnCurrentTime(xMin, xSec);
         f.innerHTML = returnCurrentTime(0,0);
@@ -57,6 +59,7 @@ function changeVideo(num){
     else if(num == 2){ // Osaka
         x.style.display = "none";
         z.style.display = "none";
+        c.style.display = "block";
         b.style.display = "none";
         y.style.display = "block";
         h.style.display = "block";
@@ -64,6 +67,7 @@ function changeVideo(num){
         y.style.animation = "fadeLeft 1s ease-in";
         h.style.animation = "fadeLeft 1s ease-in";
         a.style.animation = "fadeUp 1s ease-in";
+        c.style.animation = "fadeUp 0.75s ease-in"
         d.innerHTML = document.getElementById("firstCardOsaka").innerHTML;
         e.innerHTML = returnCurrentTime(yMin, ySec);
         f.innerHTML = returnCurrentTime(0,0);
