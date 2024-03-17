@@ -3,14 +3,22 @@
     <head> 
         <title>Ruta por Japón</title>
         <link rel="icon" href="IMAGENES/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="style.css">
-        <!-- Bootstrap 5 CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- jQuery -->
+        <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+        <!-- Bootstrap 5 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+       </script>
         <!-- Font-awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="script.js"></script>
+        <!-- JS Scripts-->
+        <script type="text/javascript" src="js/displayContents.js"></script>
+        <script type="text/javascript" src="js/videoControls.js"></script>
     </head>
 
     <body>
@@ -20,10 +28,10 @@
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar">
                     <a class="navbar-brand" href="javascript:location.reload();">
-                        <img src="IMAGENES/title-icon.png" width="40" height="30" alt="" style="padding-bottom: 5px; padding-left: 5px;">
+                        <img src="assets/IMAGENES/title-icon.png" width="40" height="30" alt="" style="padding-bottom: 5px; padding-left: 5px;">
                         <span>Ruta por Japón</span>
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end pt-4" id="navbarNavAltMarkup">
@@ -42,14 +50,14 @@
             </header>
            
             <!-- City cards -->
-            <div class="row cards-container mt-5 pt-3 pb-2">
+            <div class="row cards-container mt-5 pt-3 pb-2 container-fluid">
                 <div class="col main-title">
                     <h1 class="fadeup"><strong>Descubre las maravillosas <br> ciudades de Japón</strong></h1>
                     <button class="mt-4 explore-btn" onclick="showCards()">¡Explora ahora! <i class="fas fa-arrow-right"></i></button> 
                 </div>
                 <div class="cards col pb-5" id="cards" style="opacity: 0;">
                     <div class="card border-0 " style="width: 20rem;">
-                        <img class="card-img-top" src="IMAGENES/tokyo-bg.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="assets/IMAGENES/tokyo-bg.jpg" alt="Card image cap">
                         <div class="card-body">
                           <h4 class="card-title text-white fw-bold">Tokyo</h4>
                           <hr style="color:white; opacity: 1;">
@@ -58,7 +66,7 @@
                         </div>
                     </div>
                     <div class="card border-0 rounded" style="width: 20rem;">
-                        <img class="card-img-top" src="IMAGENES/osaka-bg.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="assets/IMAGENES/osaka-bg.jpg" alt="Card image cap">
                         <div class="card-body">
                           <h4 class="card-title text-white fw-bold">Osaka</h4>
                           <hr style="color:white; opacity: 1;">
@@ -69,31 +77,87 @@
                 </div>
             </div>
         </div>
-          <!-- Video -->
-
-        <div class="video-container mb-0">
+  
+        <div class="container-fluid contents-container mb-0">
             <div class="row ">
-                <div class="col vid">
-                    <video class="video-item" src="VIDEOS/Tokyo.mp4" height="360" controls="" loop="" id="video-tokyo" style="display:none;">
-                        <track kind="captions" label="captions" src="./captions.vtt" default="">
-                        <track kind="metadata" label="metadata" src="./metadata.vtt" default="">
+                <!-- Contenedor del video -->
+                <div class="col video-container pt-0 pb-0">
+                    <!-- Videos -->
+                    <video class="video-item" src="assets/VIDEOS/Tokyo.mp4" height="360" loop="" id="video-tokyo" style="display:none;">
+                        <!-- <track kind="captions" label="captions" src="./captions.vtt" default="">
+                        <track kind="metadata" label="metadata" src="./metadata.vtt" default=""> -->
                     </video>
-                    <video class="video-item" src="VIDEOS/Osaka.mp4" height="360" controls="" loop="" id="video-osaka" style="display:none">
-                        <track kind="captions" label="captions" src="./captions.vtt" default="">
-                        <track kind="metadata" label="metadata" src="./metadata.vtt" default="">
+                    <video class="video-item" src="assets/VIDEOS/Osaka.mp4" height="360" loop="" id="video-osaka" style="display:none">
+                        <!-- <track kind="captions" label="captions" src="./captions.vtt" default="">
+                        <track kind="metadata" label="metadata" src="./metadata.vtt" default=""> -->
                     </video>
-                    <div class="row">
-                        <input class="seek" type="range" value="0" min="0" >
+                    <!-- Barra de progreso del vídeo -->
+                    <div class="video-controls" style="display: none;">
+                        <div class="video-timeline pt-2">
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+                        <!-- Controles del vídeo -->
+                        <ul class="video-options px-0">
+                            <li class="options">
+                                <!-- Tiempos del video -->
+                                <div class="video-timer pt-3">
+                                    <p class="current-time">00:00</p>
+                                    <p class="time-sep">&nbsp/&nbsp</p>
+                                    <p class="end-time">15:00</p>
+                                    <p class="chapter-sep">&nbsp·&nbsp</p>
+                                    <p class="chapter-name"></p>
+                                </div>
+                            </li>
+                            <li class="options center">
+                                <!-- Botones retroceder, iniciar/pausar, avanzar video -->
+                                <button class="backward-btn" onclick="backwardVideo()"><i class="fas fa-backward"></i></button>
+                                <button class="play-btn" onclick="playVideo()"><i class="fas fa-play"></i></button>
+                                <button class="forward-tbn" onclick="forwardVideo()"><i class="fas fa-forward"></i></button>
+                            </li>
+                            <li class="options" id="opt-right">
+                                <!-- Botones cambiar velocidad, cambiar calidad, pantalla completa-->
+                                <div class="dropup">
+                                    <button class="btn speed-btn" data-bs-toggle="dropdown">
+                                        <i class="fas fa-gauge"></i>
+                                    </button>
+                                    <ul class="dropdown-menu speed-options">
+                                        <li class="dropdown-item">2</li>
+                                        <li class="dropdown-item">1.75</li>
+                                        <li class="dropdown-item">1.5</li>
+                                        <li class="dropdown-item">1.25</li>
+                                        <li class="dropdown-item">1</li>
+                                        <li class="dropdown-item">0.75</li>
+                                        <li class="dropdown-item">0.5</li>
+                                        <li class="dropdown-item">0.25</li>
+                                    </ul>
+                                </div>
+                                <div class="dropup">
+                                    <button class="btn quality-btn" data-bs-toggle="dropdown">
+                                        <i class="fas fa-sliders"></i>
+                                    </button>
+                                    <ul class="dropdown-menu quality-options">
+                                        <li class="dropdown-item">240p</li>
+                                        <li class="dropdown-item">360p</li>
+                                        <li class="dropdown-item">480p</li>
+                                        <li class="dropdown-item">720p</li>
+                                        <li class="dropdown-item">1080p</li>
+                                    </ul>
+                                </div>
+                                <button class="fullscreen-btn" onclick="fullscreen()"><i class="fas fa-expand"></i></button>
+                            </li>    
+                        </ul>
                     </div>
                 </div>
-                <div class="col desc">
+                <div class="col desc pt-3">
                     <div id="info-tokyo" style="display: none;">
                         <h2><strong>TOKYO</strong> (東京)</h2>
                         <h5><i>"El latido del corazón de Japón"</i></h5>
                         <p class="pt-3">Tokyo es una metrópolis vibrante y dinámica que combina la rica historia y cultura japonesa con la modernidad y la innovación. Es conocida por ser una de las ciudades más grandes y pobladas del mundo, con una energía que nunca se detiene.</p>
                         <p>Con una fascinante mezcla de antiguos templos, modernos rascacielos, mercados bulliciosos y una increíble escena gastronómica, Tokyo ofrece una experiencia única para los visitantes de todas partes del mundo.</p>
                         <p> Es mucho más que una simple ciudad: es un destino que cautiva los sentidos y el corazón de quienes la visitan, dejando recuerdos imborrables.</p>
-                        <button class="mt-2 visit-btn" onclick="showPlaces(1)">¡Descubre los sitios que no te puedes perder! <i class="fas fa-location-dot"></i></button>
+                        <button class="mt-2 visit-btn" onclick="showPlaces(1)">Sitios que no te puedes perder <i class="fas fa-location-dot"></i></button>
                     </div>
                     <div id="info-osaka" style="display: none;">
                         <h2><strong>OSAKA</strong> (大阪)</h2>
@@ -101,29 +165,29 @@
                         <p class="pt-3">Osaka es una ciudad conocida por su atmósfera vibrante y acogedora que deja una impresión duradera en todos sus visitantes.</p>
                         <p>Esta metrópolis japonesa es un centro cultural, gastronómico y económico bullicioso que ofrece una rica historia, una cultura fascinante y una deliciosa comida callejera.</p>
                         <p>Con sus impresionantes rascacielos, animados mercados, parques históricos y una vida nocturna vibrante, Osaka es una ciudad que nunca duerme y que cautiva a los visitantes con su energía y vitalidad.</p>
-                        <button class="mt-2 visit-btn" onclick="showPlaces(2)">¡Descubre los sitios que no te puedes perder! <i class="fas fa-location-dot"></i></button>
+                        <button class="mt-2 visit-btn" onclick="showPlaces(2)">Sitios que no te puedes perder <i class="fas fa-location-dot"></i></button>
                     </div>
                 </div>
-                <div class="col-10 places">
+                <div class="col-10 places pt-3">
                     <div style="display: none;" id="places-tokyo">
                         <h2>Lugares de interés de Tokyo<h2>
                         <div class="places-cards pt-3">
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(1)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/akihabara.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(1)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/akihabara.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
-                                    <h5 class="card-title">Akihabara</h5>
+                                    <h5 class="card-title" id="firstCardTokyo">Akihabara</h5>
                                 </div>
                             </div>
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(2)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/sensoji.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(2)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/sensoji.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Templo Senso-ji</h5>
                                 </div>
                             </div>
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(3)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/tokyo-tower.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(3)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/tokyo-tower.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Tokyo Tower</h5>
                                 </div>
                             </div>
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(4)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/shibuya.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoTokyo(4)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/shibuya.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Cruce de Shibuya</h5>
                                 </div>
@@ -133,22 +197,22 @@
                     <div style="display: none;" id="places-osaka">
                         <h2>Lugares de interés de Osaka<h2>
                         <div class="places-cards pt-3">
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(1)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/dotonbori.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(1)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/dotonbori.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
-                                    <h5 class="card-title">Dotonbori</h5>
+                                    <h5 class="card-title" id="firstCardOsaka">Dotonbori</h5>
                                 </div>
                             </div>
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(2)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/castillo-osaka.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(2)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/castillo-osaka.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Castillo de Osaka</h5>
                                 </div>
                             </div>
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(3)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/shinsekai.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(3)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/shinsekai.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Shinsekai</h5>
                                 </div>
                             </div>
-                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(4)" style="width: 20rem; height: 20rem; background-image: url('IMAGENES/kuromon.jpg'); background-size: cover; background-position: center; cursor: pointer;">
+                            <div class="card-place card bg-dark text-white" onclick="selectVideoOsaka(4)" style="width: 20rem; height: 20rem; background-image: url('assets/IMAGENES/kuromon.jpg'); background-size: cover; background-position: center; cursor: pointer;">
                                 <div class="card-img-overlay">
                                     <h5 class="card-title">Mercado Kuromon</h5>
                                 </div>
