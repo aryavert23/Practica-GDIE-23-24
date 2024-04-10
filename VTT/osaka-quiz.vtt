@@ -1,0 +1,49 @@
+WEBVTT 
+
+00:02:05.000 --> 00:02:05.500
+{
+  "question": "¿Cómo se le conoce al corredor del icónico cartel de Dotonbori?",
+  "answers": [
+    "Glico Man",
+    "Doflamingo",
+    "Ultra Man",
+    "Astro Boy"
+  ],
+  "correct": 0
+}
+
+00:04:09.000 --> 00:04:09.500
+{
+  "question": "¿En qué período fue importante el castillo de Osaka?",
+  "answers": [
+    "Edo",
+    "Meiji",
+    "Azuchi-Momoyama",
+    "Saitama"
+  ],
+  "correct": 2
+}
+
+00:06:17.000 --> 00:06:17.500
+{
+  "question": "¿Cómo se llama la estructura más famosa de Shinsekai?",
+  "answers": [
+    "Teatro Kodama",
+    "Tsūtenkaku",
+    "Gorosei",
+    "Tsutaya"
+  ],
+  "correct": 1
+}
+
+00:08:23.000 --> 00:08:23.500
+{
+  "question": "¿Qué significa Kuromon?",
+  "answers": [
+    "Puerta negra",
+    "Escaleras al cielo",
+    "Montaña bendita",
+    "Santuario del diablo"
+  ],
+  "correct": 0
+}

@@ -1,0 +1,152 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.000
+{
+  "title": "Akihabara",
+  "image": "assets/IMAGENES/akihabara.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1f8QIoNjMn3z2H7gi037KlRhnzgevNbk&ehbc=2E312F&noprof=1"
+}
+
+00:00:05.000 --> 00:00:20.000
+{
+    "desc": "Las chicas que se pueden ver a los lados de las calles repartiendo panfletos son empleadas de Maid Cafes, unos establecimientos de comida donde el personal atiende a los clientes vistiendo un cosplay. ",
+    "addText": "Los primeros locales surgieron en Akihabara, a raíz de la pujante subcultura otaku de la zona. Otras variantes de estos locales incluyen cafeterías, bares y pastelerías, donde los meseros, mayoritariamente de sexo femenino o masculino respectivamente, visten sirvientes. A menudo estos servicios se confunden con la prostitución y, aunque hay excepciones, no suele tener ninguna relación. ",
+    "image":  "assets/IMAGENES/maidcafe.jpg"
+}
+
+00:00:20.000 --> 00:00:48.000
+{
+  "title": "Akihabara",
+  "image": "assets/IMAGENES/akihabara.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1f8QIoNjMn3z2H7gi037KlRhnzgevNbk&ehbc=2E312F&noprof=1"
+}
+
+00:00:48.000 --> 00:01:12.000
+{
+    "desc": "Como se puede ver en los carteles, Akihabara es el paraíso para los amantes del anime y de los videojuegos. ",
+    "addText": "El entretenimiento relacionado con anime y videojuegos está concentrado en esta zona (la calle principal, Chūōdōri), tales como: galerías de artistas reconocidos, principalmente de Square-Enix y Gonzo, Karaokes especializados en música de anime y eventos de la idol de la semana. ",
+    "image":  "assets/IMAGENES/anime.jpg"
+}
+
+00:01:12.000 --> 00:02:08.000
+{
+  "title": "Akihabara",
+  "image": "assets/IMAGENES/akihabara.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1f8QIoNjMn3z2H7gi037KlRhnzgevNbk&ehbc=2E312F&noprof=1"
+}
+
+2
+00:02:08.000 --> 00:02:40.000
+{
+  "title": "Templo Senso-ji",
+  "image": "assets/IMAGENES/sensoji.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1Kbngzc1MZIZz6IIar8vZDx0RKSoTzzU&ehbc=2E312F&noprof=1"
+}
+
+00:02:40.000 --> 00:03:10.000
+{
+    "desc": "El templo Senso-ji está dedicado al bodisatva Kannon (Avalokitesvara), bodhisattva venerado en el budismo. ",
+    "addText": "Según la leyenda, la estatua de Kannon fue encontrada en el río Sumida por dos pescadores (los hermanos Hinokuma Hamanari y Hinokuma Takenari) en el año 628. El jefe de la aldea, Hajino Nakamoto, reconoció la santidad de la estatua y la veneró remodelando su propia casa en un pequeño templo para que los habitantes de Asakusa le pudiesen rendir culto. ",
+    "image":  "assets/IMAGENES/sensojiestatua.jpg"
+}
+
+00:03:10.000 --> 00:03:20.000
+{
+  "title": "Templo Senso-ji",
+  "image": "assets/IMAGENES/sensoji.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1Kbngzc1MZIZz6IIar8vZDx0RKSoTzzU&ehbc=2E312F&noprof=1"
+}
+
+00:03:20.000 --> 00:03:41.000
+{
+    "desc": "La pagoda es un edificio de varios niveles común en varios países asiáticos, entre ellos China, Vietnam, Japón, Tailandia y las Coreas. ",
+    "addText": " La mayoría de las pagodas fueron construidas con propósitos religiosos, principalmente como parte del budismo y en algunas ocasiones del taoísmo, por lo cual están ubicadas cerca o adentro de templos budistas, como es el caso de Senso-ji. ",
+    "image":  "assets/IMAGENES/pagoda.jpg"
+}
+
+00:03:41.000 --> 00:04:01.000
+{
+  "title": "Templo Senso-ji",
+  "image": "assets/IMAGENES/sensoji.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1Kbngzc1MZIZz6IIar8vZDx0RKSoTzzU&ehbc=2E312F&noprof=1"
+}
+
+3
+00:04:01.000 --> 00:04:09.000
+{
+  "title": "Tokyo Tower",
+  "image": "assets/IMAGENES/tokyo-tower.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=130ycnDrs5GCyZEsSf3IztXGbANalzFk&ehbc=2E312F&noprof=1"
+}
+
+00:04:09.000 --> 00:04:35.000
+{
+    "desc": "La comúnmente conocida como Tokyo Tower, en Japón es llamada oficialmente Torre de Radio de Japón. ",
+    "addText": "La torre de Tokyo, además de cumplir la función de observación, es una torre usada para las telecomunicaciones, por lo que en Japón se le conoce como Nippon Denpatō, cuya traducción literal es Torre de Radio de Japón. ",
+    "image":  "assets/IMAGENES/tower.jpg"
+}
+
+00:04:35.000 --> 00:04:41.000
+{
+  "title": "Tokyo Tower",
+  "image": "assets/IMAGENES/tokyo-tower.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=130ycnDrs5GCyZEsSf3IztXGbANalzFk&ehbc=2E312F&noprof=1"
+}
+
+00:04:41.000 --> 00:05:09.000
+{
+    "desc": "La Tokyo Tower fue inspirada por la torre Eiffel. ",
+    "addText": "Es una torre de celosía inspirada en la Torre Eiffel, que está pintada de color blanco y naranja internacional para cumplir las regulaciones de seguridad aérea. Con 332.9 m de altura, es la segunda estructura más alta de Japón, solo por debajo del Skytree. ",
+    "image":  "assets/IMAGENES/eiffel.jpg"
+}
+
+00:05:09.000 --> 00:05:59.000
+{
+  "title": "Tokyo Tower",
+  "image": "assets/IMAGENES/tokyo-tower.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=130ycnDrs5GCyZEsSf3IztXGbANalzFk&ehbc=2E312F&noprof=1"
+}
+
+4
+00:05:59.000 --> 00:06:27.000
+{
+  "title": "Cruce de Shibuya",
+  "image": "assets/IMAGENES/shibuya.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1DvVEDt0QOgptO1mPyMO6yEP1zTJeQKU&ehbc=2E312F&noprof=1"
+}
+
+00:06:27.000 --> 00:07:00.000
+{
+    "desc": "Esta intersección es frecuentemente reconocida como la intersección peatonal más transitada del mundo. ",
+    "addText": "Según Shibuya Center Street en 2016, el número de peatones que cruzan la intersección asciende a 3.000 por semáforo en verde (cada 2 minutos). Una encuesta de medición de flujo realizada en 2014 por la Asociación de Reurbanización de Shibuya estimó 260.000 peatones por día entre semana y 390.000 peatones en días no laborables. ",
+    "image":  "assets/IMAGENES/peatones.jpg"
+}
+
+00:07:00.000 --> 00:07:25.000
+{
+  "title": "Cruce de Shibuya",
+  "image": "assets/IMAGENES/shibuya.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1DvVEDt0QOgptO1mPyMO6yEP1zTJeQKU&ehbc=2E312F&noprof=1"
+}
+
+00:07:25.000 --> 00:08:00.000
+{
+    "desc": "En este cruce se encuentra la famosa estatua de Hachiko. ",
+    "addText": "Una estatua del perro Akita Hachikō , recordado por su inquebrantable lealtad hacia su fallecido dueño, está instalada afuera de la estación Shibuya, que se encuentra en este mismo cruce. De hecho, la salida de la estación se llama Salida Hachiko en su honor. ",
+    "image":  "assets/IMAGENES/hachiko.jpg"
+}
+
+00:08:00.000 --> 00:08:05.000
+{
+  "title": "Cruce de Shibuya",
+  "image": "assets/IMAGENES/shibuya.jpg",
+  "map": "https://www.google.com/maps/d/u/0/embed?mid=1DvVEDt0QOgptO1mPyMO6yEP1zTJeQKU&ehbc=2E312F&noprof=1"
+}
+
+
+
+
+
+
+

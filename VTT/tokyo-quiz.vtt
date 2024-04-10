@@ -1,0 +1,49 @@
+WEBVTT 
+
+00:02:08.000 --> 00:02:08.500
+{
+  "question": "¿Por qué motivo es conocido Akihabara?",
+  "answers": [
+    "La comida",
+    "Los templos",
+    "La cultura pop y tecnología",
+    "Los festivales"
+  ],
+  "correct": 2
+}
+
+00:04:01.000 --> 00:04:01.500
+{
+  "question": "¿En que barrio se encuentra el templo Senso-ji?",
+  "answers": [
+    "Asakusa",
+    "Ginza",
+    "Harajuku",
+    "Sapporo"
+  ],
+  "correct": 0
+}
+
+00:05:59.000 --> 00:05:59.500
+{
+  "question": "¿En qué famoso monumento está inspirado la Tokyo Tower?",
+  "answers": [
+    "Sagrada Familia",
+    "Torre Eiffel",
+    "Big Ben",
+    "Torre de Pisa"
+  ],
+  "correct": 1
+}
+
+00:08:04.000 --> 00:08:05.000
+{
+  "question": "¿Como se llama el perro cuya estatua se encuentra afuera de la estación de Shibuya?",
+  "answers": [
+    "Hachiko",
+    "Akainu",
+    "Kizaru",
+    "Fujitora"
+  ],
+  "correct": 0
+}
