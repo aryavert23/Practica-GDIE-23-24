@@ -94,18 +94,23 @@
                 <!-- Contenedor del video -->
                 <div class="col col-8 col-lg-5 video-container pt-0 pb-0">
                     <!-- Videos -->
-                    <video class="video-item" src="assets/VIDEOS/Tokyo.mp4" height="auto" width="100%" id="video-tokyo" style="display:none;" preload="metadata">
+                    <video class="video-item" src="assets/VIDEOS/Tokyo.mp4" height="auto" width="100%" id="video-tokyo"
+                        style="display:none;" preload="metadata">
                         <source src="assets/VIDEOS/Tokyo.webm">
                         <track kind="subtitles" src="assets/VTT/tokyo.vtt" label="captionsTokyo" default="">
-                        <track kind="metadata" src="assets/VTT/tokyo-chapters-facts.vtt" label="curiosidadesTokyo" id="facts-tokyo" default="">
+                        <track kind="metadata" src="assets/VTT/tokyo-chapters-facts.vtt" label="curiosidadesTokyo" id="facts-tokyo"
+                            default="">
                         <track kind="metadata" src="assets/VTT/tokyo-quiz.vtt" label="quizTokyo" id="quiz-tokyo" default="">
                     </video>
+                    <canvas id="canvasTokyo" style="display:none;"></canvas>
                     <video class="video-item" src="assets/VIDEOS/Osaka.mp4" height="360" id="video-osaka" style="display:none">
                         <source src="assets/VIDEOS/Osaka.webm">
                         <track kind="subtitles" src="assets/VTT/osaka.vtt" label="captionsOsaka" id="capts-osaka" default="">
-                        <track kind="metadata" src="assets/VTT/osaka-chapters-facts.vtt" label="curiosidadesOsaka" id="facts-osaka" default="">
+                        <track kind="metadata" src="assets/VTT/osaka-chapters-facts.vtt" label="curiosidadesOsaka" id="facts-osaka"
+                            default="">
                         <track kind="metadata" src="assets/VTT/osaka-quiz.vtt" label="quizOsaka" id="quiz-osaka" default="">
                     </video>
+                    <canvas id="canvasOsaka" style="display:none;"></canvas>
                     <!-- Barra de progreso del vídeo -->
                     <div class="video-controls" style="display: none;">
                         <div class="video-timeline pt-2">
@@ -132,7 +137,8 @@
                                 <button class="forward-tbn" onclick="forwardVideo()"><i class="fas fa-forward"></i></button>
                             </li>
                             <li class="options" id="opt-right">
-                                <!-- Botones cambiar velocidad, cambiar calidad, pantalla completa-->
+                                <!-- Botones cambiar velocidad, cambiar calidad, pantalla completa-->                   
+                                <button id="captureBtn">Capt</button>
                                 <div class="dropup">
                                     <button class="btn speed-btn" data-bs-toggle="dropdown">
                                         <i class="fas fa-gauge"></i>
@@ -163,6 +169,10 @@
                                 <button class="fullscreen-btn" onclick="fullscreen()"><i class="fas fa-expand"></i></button>
                             </li>    
                         </ul>
+                        <div id="captureContainer">
+                            <h3>Imagen capturada:</h3>
+                            <img id="capturedImage" src="">
+                        </div>
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6 desc pt-3 h-60">
