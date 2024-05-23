@@ -471,3 +471,13 @@ video::cue {
 .gmap_iframe {
     height: 300px!important;
 }
+
+#captureContainer {
+    display: none;
+    margin-top: 20px;
+}
+
+#captureContainer img {
+    max-width: 50%;
+    height: auto;
+}
