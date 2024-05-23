@@ -27,6 +27,51 @@ document.addEventListener("DOMContentLoaded", function(){
     var cardsTokyo = document.getElementById("cards-tokyo");
     var cardsOsaka = document.getElementById("cards-osaka");
     var respCorrectas = document.getElementById("preguntas-correctas");
+    
+    //Para las capturas
+    var canvasT = document.getElementById("canvasTokyo");
+    var canvasO = document.getElementById("canvasOsaka");
+    var captureBtn = document.getElementById("captureBtn");
+    var captureContainer = document.getElementById("captureContainer");
+    var capturedImage = document.getElementById("capturedImage");
+    var timeoutId;
+    
+    captureBtn.addEventListener("click", function () {
+        //VIDEO DE TOKYO
+        if (vidOsaka.style.display == "none") {
+            var context = canvasT.getContext("2d");
+            canvasT.width = vidTokyo.videoWidth;
+            canvasT.height = vidTokyo.videoHeight;
+            context.drawImage(vidTokyo, 0, 0, canvasT.width, canvasT.height);
+            var dataURL = canvasT.toDataURL("image/png");
+            capturedImage.src = dataURL;
+            captureContainer.style.display = "block";
+            //Se reinicia el contador
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            timeoutId = setTimeout(function () {
+                captureContainer.style.display = "none";
+            }, 5000); 
+        }
+        else {
+            //VIDEO DE OSAKA
+            var context = canvasO.getContext("2d");
+            canvasO.width = vidOsaka.videoWidth;
+            canvasO.height = vidOsaka.videoHeight;
+            context.drawImage(vidOsaka, 0, 0, canvasO.width, canvasO.height);
+            var dataURL = canvasO.toDataURL("image/png");
+            capturedImage.src = dataURL;
+            captureContainer.style.display = "block";
+            //Se reinicia el contador
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            timeoutId = setTimeout(function () {
+                captureContainer.style.display = "none";
+            }, 5000); 
+        }
+    });
 
     btnTokyo.addEventListener("click", function(){
         factsTokyo.addEventListener('cuechange', factsCueChangeTokyo);
@@ -120,6 +165,9 @@ document.addEventListener("DOMContentLoaded", function(){
         respCorrectas.appendChild(correctas);
     })
 })
+
+
+
 
 function showCards(){
     var x = document.getElementById("cards");
