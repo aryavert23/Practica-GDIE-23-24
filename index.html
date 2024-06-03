@@ -19,6 +19,10 @@
         <!-- JS Scripts-->
         <script type="text/javascript" src="js/displayContents.js"></script>
         <script type="text/javascript" src="js/videoControls.js"></script>
+        <!-- Dash.js -->
+        <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+        <!-- HLS.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.8.2/hls.min.js"></script>
     </head>
 
     <body>
@@ -31,6 +35,10 @@
                         <div class="title-nav">
                             <img src="assets/IMAGENES/title-icon.png" width="40" height="30" alt="" style="padding-bottom: 5px; padding-left: 5px;">
                             <span>Ruta por Japón</span>
+                        </div>
+                        <div class="d-flex mt-4" id="pr1-link">
+                            <a class="nav-link nav-link-ltr" href="practica1/index_pr1.html" target="_blank"><span>Práctica 1</span></a>
+                            <a class="nav-link nav-link-ltr mx-4" href="practica2/index_pr2.html" target="_blank"><span>Práctica 2</span></a>
                         </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +65,8 @@
             <div class="row cards-container mt-5 pt-3 pb-2 container-fluid">
                 <div class="col col-lg-5 main-title">
                     <h1 class="fadeup"><strong>Descubre las maravillosas <br> ciudades de Japón</strong></h1>
-                    <button class="mt-4 explore-btn" onclick="showCards()">¡Explora ahora! <i class="fas fa-arrow-right"></i></button> 
+                        <button class="mt-4 explore-btn" onclick="showCards()">¡Explora ahora! <i class="fas fa-arrow-right"></i></button>
+                        <button class="button-85 mt-4 mx-4" onclick="showQuiz()">¡Juega al quiz! &nbsp; <i class="fas fa-gamepad"></i></button> 
                 </div>
                 <div class="col col-12 col-lg-4 cards pb-5" id="cards" style="opacity: 0;">
                     <div class="row gy-5">
@@ -90,27 +99,149 @@
         </div>
   
         <div class="container-fluid contents-container mb-0">
+            <div class="mt-2" id="rooms" style="display: none;">
+                <h4>Salas de juego disponibles</h4>
+                <hr class="mt-0" style="opacity: 0;">
+                <div class="row quiz-row">
+                    <div class="col-6">Quiz de Tokyo &#128508;</div>
+                    <div class="col-6">
+                        <span style="font-size: 14px; color: white;">Nº jugadores: <span id="nPlayers-tokyo">0</span> / 4&nbsp;&nbsp; </span>
+                        <button class="tokyo-room-btn">Unirse a la sala</button>
+                  
+                    </div>
+                </div>
+                <div class="row quiz-row">
+                    <div class="col-6">Quiz de Osaka &#127983;</div>
+                    <div class="col-6">
+                        <span style="font-size: 14px; color: white;">Nº jugadores: <span id="nPlayers-osaka">0</span> / 4&nbsp;&nbsp;</span>
+                        <button class="osaka-room-btn">Unirse a la sala</button>
+                    </div>
+                </div>
+                <div class="row quiz-row">
+                    <div class="col-6">Quiz de Kyoto &#127982;</div>
+                    <div class="col-6">
+                        <span style="font-size: 14px; color: white;">Nº jugadores: <span id="nPlayers-kyoto">0</span> / 4&nbsp;&nbsp;</span>
+                        <button class="kyoto-room-btn">Unirse a la sala</button>
+                    </div>
+                </div>
+                <div class="row quiz-row">
+                    <div class="col-6">Quiz de Fukuoka &#127800;</div>
+                    <div class="col-6">
+                        <span style="font-size: 14px; color: white;">Nº jugadores: <span id="nPlayers-fukuoka">0</span> / 4&nbsp;&nbsp;</span>
+                        <button class="fukuoka-room-btn">Unirse a la sala</button>
+                    </div>
+                </div>
+                <div class="mt-3" id="con-user"></div>
+                
+                <form id="usernameForm" class="username-form">
+                  <input type="text" required minlength="2" maxlength="10" id="usernameInput" placeholder="Ingresa tu nombre de usuario"
+                    style="font-size: medium; width: 50%; border-radius: 5px; padding-left: 0.5em;">
+                  <button id="submitUsername"><i class="fas fa-paper-plane"></i></button>
+                </form>
+
+            </div>
+            <div class="mt-2 mx-4" id="tokyo-room" style="display: none;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-6" id="players-tokyo"><b>Jugadores</b></div>
+                            <div class="col-6" id="points-tokyo"><b>Puntos</b></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-6"><h4>Quiz de Tokyo &#128508;</h4></div>
+                            <div class="col-6 text-end" style="padding-top: 0.25em; padding-right: 1em;">Pregunta <span id="round-tokyo"></span>/10</div>
+                        </div>
+                        <hr class="mt-0" style="color: white; opacity: 1;">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 mx-4" id="osaka-room" style="display: none;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-6" id="players-osaka"><b>Jugadores</b></div>
+                            <div class="col-6" id="points-osaka"><b>Puntos</b></div>
+                        </div>
+
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-6"><h4>Quiz de Osaka &#127983;</h4></div>
+                            <div class="col-6 text-end" style="padding-top: 0.25em; padding-right: 1em;">Pregunta <span id="round-osaka"></span>/10</div>
+                        </div>
+                        <hr class="mt-0" style="color: white; opacity: 1;">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 mx-4" id="kyoto-room" style="display: none;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-6" id="players-kyoto"><b>Jugadores</b></div>
+                            <div class="col-6" id="points-kyoto"><b>Puntos</b></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-6"><h4>Quiz de Kyoto &#127982;</h4></div>
+                            <div class="col-6 text-end" style="padding-top: 0.25em; padding-right: 1em;">Pregunta <span id="round-kyoto"></span>/10</div>
+                        </div>
+                        <hr class="mt-0" style="color: white; opacity: 1;">
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2 mx-4" id="fukuoka-room" style="display: none;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-6" id="players-fukuoka"><b>Jugadores</b></div>
+                            <div class="col-6" id="points-fukuoka"><b>Puntos</b></div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-6"><h4>Quiz de Fukuoka &#127800;</h4></div>
+                            <div class="col-6 text-end" style="padding-top: 0.25em; padding-right: 1em;">Pregunta <span id="round-fukuoka"></span>/10</div>
+                        </div>
+                        <hr class="mt-0" style="color: white; opacity: 1;">
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <!-- Contenedor del video -->
                 <div class="col col-8 col-lg-5 video-container pt-0 pb-0">
                     <!-- Videos -->
-                    <video class="video-item" src="assets/VIDEOS/Tokyo.mp4" height="auto" width="100%" id="video-tokyo"
-                        style="display:none;" preload="metadata">
+                    <video class="video-item" src="assets/VIDEOS/tokyo_1080p.mp4" autoplay height="auto" width="100%" id="video-tokyo" style="display:none;" preload="metadata">
                         <source src="assets/VIDEOS/Tokyo.webm">
-                        <track kind="subtitles" src="assets/VTT/tokyo.vtt" label="captionsTokyo" default="">
-                        <track kind="metadata" src="assets/VTT/tokyo-chapters-facts.vtt" label="curiosidadesTokyo" id="facts-tokyo"
-                            default="">
+                        <source src="assets/VIDEOS/tokyo_240p.mp4">
+                        <source src="assets/VIDEOS/tokyo_360p.mp4">
+                        <source src="assets/VIDEOS/tokyo_480p.mp4">
+                        <source src="assets/VIDEOS/tokyo_720p.mp4">
+                        <source src="assets/VIDEOS/tokyo_1080p.mp4">
+                        <track kind="subtitles" src="assets/VTT/tokyo.vtt" label="captionsTokyo" id="capts-tokyo" default="">
+                        <track kind="metadata" src="assets/VTT/tokyo-chapters-facts.vtt" label="curiosidadesTokyo" id="facts-tokyo" default="">
                         <track kind="metadata" src="assets/VTT/tokyo-quiz.vtt" label="quizTokyo" id="quiz-tokyo" default="">
                     </video>
+
                     <canvas id="canvasTokyo" style="display:none;"></canvas>
-                    <video class="video-item" src="assets/VIDEOS/Osaka.mp4" height="360" id="video-osaka" style="display:none">
+
+                    <video class="video-item" src="assets/VIDEOS/osaka_1080p.mp4" autoplay height="360" id="video-osaka" style="display:none">
                         <source src="assets/VIDEOS/Osaka.webm">
+                        <source src="assets/VIDEOS/osaka_240p.mp4">
+                        <source src="assets/VIDEOS/osaka_360p.mp4">
+                        <source src="assets/VIDEOS/osaka_480p.mp4">
+                        <source src="assets/VIDEOS/osaka_720p.mp4">
+                        <source src="assets/VIDEOS/osaka_1080p.mp4">
                         <track kind="subtitles" src="assets/VTT/osaka.vtt" label="captionsOsaka" id="capts-osaka" default="">
-                        <track kind="metadata" src="assets/VTT/osaka-chapters-facts.vtt" label="curiosidadesOsaka" id="facts-osaka"
-                            default="">
+                        <track kind="metadata" src="assets/VTT/osaka-chapters-facts.vtt" label="curiosidadesOsaka" id="facts-osaka" default="">
                         <track kind="metadata" src="assets/VTT/osaka-quiz.vtt" label="quizOsaka" id="quiz-osaka" default="">
                     </video>
+
                     <canvas id="canvasOsaka" style="display:none;"></canvas>
+
                     <!-- Barra de progreso del vídeo -->
                     <div class="video-controls" style="display: none;">
                         <div class="video-timeline pt-2">
@@ -137,8 +268,13 @@
                                 <button class="forward-tbn" onclick="forwardVideo()"><i class="fas fa-forward"></i></button>
                             </li>
                             <li class="options" id="opt-right">
-                                <!-- Botones cambiar velocidad, cambiar calidad, pantalla completa-->                   
-                                <button id="captureBtn">Capt</button>
+                                <!-- Botones cambiar velocidad, cambiar calidad, pantalla completa-->
+                                <button id="captureBtn" data-toggle="tooltip" data-placement="top" title="¡Analiza la imagen con IA!"><i class="fas fa-camera"></i></button>
+                                <script>
+                                    $(document).ready(function(){
+                                      $('[data-toggle="tooltip"]').tooltip();   
+                                    });
+                                </script>
                                 <div class="dropup">
                                     <button class="btn speed-btn" data-bs-toggle="dropdown">
                                         <i class="fas fa-gauge"></i>
@@ -155,7 +291,7 @@
                                     </ul>
                                 </div>
                                 <div class="dropup">
-                                    <button class="btn quality-btn" data-bs-toggle="dropdown">
+                                    <button class="btn quality-btn" data-bs-toggle="dropdown" onclick="addVideoQuality()">
                                         <i class="fas fa-sliders"></i>
                                     </button>
                                     <ul class="dropdown-menu quality-options">
@@ -164,15 +300,37 @@
                                         <li class="dropdown-item">480p</li>
                                         <li class="dropdown-item">720p</li>
                                         <li class="dropdown-item">1080p</li>
+                                        <li class="dropdown-item">MPEG-DASH</li>
+                                        <li class="dropdown-item">HLS</li>
                                     </ul>
                                 </div>
                                 <button class="fullscreen-btn" onclick="fullscreen()"><i class="fas fa-expand"></i></button>
                             </li>    
                         </ul>
-                        <div id="captureContainer">
-                            <h3>Imagen capturada:</h3>
-                            <img id="capturedImage" src="">
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content" style="background-color: rgba(109, 107, 107, 0.167);">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="imageModalLabel">Objetos detectados en la imagen</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="modalImage" src="" alt="Captured Image" class="img-fluid">
+                                        <div id="loadingMessage" class="text-center mt-3">Analizando la imagen...</div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn" data-dismiss="modal" onclick="dismissModal()"><i class="fas fa-x" style="color: white"></i></button>
+                                        <script>
+                                            function dismissModal(){
+                                                $("#imageModal").modal('hide');
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6 desc pt-3 h-60">
@@ -254,5 +412,8 @@
                 </div>
             </div>
         </div>
+    <!-- Socket.IO -->
+    <script src="socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/quiz.js"></script>
     </body>
 </html>
