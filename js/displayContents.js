@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     async function objectDetection(img) {
         const API_URL = 'https://api-inference.huggingface.co/models/facebook/detr-resnet-50';
-        const API_KEY = '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';
+        const API_KEY = 'SECRET';
         const base64Image = img.replace(/^data:image\/(png|jpeg);base64,/, '');
 
         const response = await fetch(
